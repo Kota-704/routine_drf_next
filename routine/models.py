@@ -2,6 +2,7 @@ from django.db import models
 import uuid
 from datetime import date
 from django.core.validators import MinValueValidator
+from django.contrib.auth.models import User
 
 
 class RoutineModels(models.Model):
