@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import RoutineModels
+from .serializers import RoutineSerializer
 
-# Create your views here.
+class RoutineViewSet(viewsets.ModelViewSet):
+  queryset = RoutineModels.objects.all()
+  serializer_class = RoutineSerializer
