@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'routine',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +54,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+# 本番時にコメントアウトする
+CORS_ALLOW_ALL_ORIGINS = True
+
+# 本番時にコメントアウト解除
+# CORS_ALLOWED_ORIGINS = [
+#     "https://your-frontend-domain.com",
+# ]
 
 TEMPLATES = [
     {
